@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testflutterapp/Definitions.dart';
+import 'Definitions.dart';
 import 'HomePage.dart';
 
 void main() {

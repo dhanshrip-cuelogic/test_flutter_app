@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutterapp/Definitions.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,39 +10,48 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'New Flutter App',
+        appBar: AppBar(
+          title: Text(
+            'HomePage',
             style: TextStyle(
               color: Colors.white,
             ),
           ),
+          centerTitle: true,
         ),
-      ),
-      body: Center(
-        child: Container(
-          color: Colors.orange,
-          padding: EdgeInsets.all(20.0),
-          child: Text(
-            'Welcome to HomePage',
-            style: TextStyle(
-              color: Colors.red,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              fontSize: 12.0,
-            ),
-            overflow: TextOverflow.clip,
-            textScaleFactor: 2.0,
-            softWrap: false,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Text(
+                'Welcome to Definitions App',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 20.0,
+                ),
+              ),
+              GestureDetector(
+                child: Container(
+                  height: 50.0,
+                  width: 150.0,
+                  child: Center(
+                    child: Text(
+                      'Check Definitions',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
-        child: Icon(Icons.add_comment),
-      ),
-    );
+        ));
   }
 }
