@@ -10,48 +10,46 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'HomePage',
-            style: TextStyle(
-              color: Colors.white,
-            ),
+      appBar: AppBar(
+        title: Text(
+          'HomePage',
+          style: TextStyle(
+            color: Colors.white,
           ),
-          centerTitle: true,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text(
-                'Welcome to Definitions App',
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text(
+              'Welcome to Definitions App',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Image(image: AssetImage('images/dimage.png')),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Definitions()));
+              },
+              child: Text(
+                'Go to next page',
                 style: TextStyle(
-                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
                   fontSize: 20.0,
                 ),
               ),
-              GestureDetector(
-                child: Container(
-                  height: 50.0,
-                  width: 150.0,
-                  child: Center(
-                    child: Text(
-                      'Check Definitions',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ));
+              textColor: Colors.white,
+              color: Colors.orangeAccent,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

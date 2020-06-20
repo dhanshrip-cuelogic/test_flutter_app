@@ -6,6 +6,34 @@ class Definitions extends StatefulWidget {
 }
 
 class _DefinitionsState extends State<Definitions> {
+  void wordText(String word) {
+    Text(
+      '$word',
+      style: TextStyle(
+        color: Colors.red,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        fontSize: 12.0,
+      ),
+      overflow: TextOverflow.clip,
+      textScaleFactor: 2.0,
+      softWrap: true,
+    );
+  }
+
+  void definitionText(String definition) {
+    Text(
+      '$definition',
+      style: TextStyle(
+        color: Colors.blue,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        fontSize: 20.0,
+      ),
+      softWrap: true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +179,7 @@ class _DefinitionsState extends State<Definitions> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
-        child: Icon(Icons.add_comment),
+        child: Icon(Icons.add),
       ),
     );
   }
